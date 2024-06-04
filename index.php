@@ -1,3 +1,23 @@
+<?php
+
+  // CONNECT TO DB 
+    require_once('shared/conn.php');
+
+    // CREATE A TABLE 
+    function createTableIfNotExist($conn, $tableName){
+      $create_table = "CREATE TABLE IF NOT EXISTS $tableName (
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL UNIQUE,
+        password VARCHAR(255) NOT NULL,
+        dob DATE NOT NULL
+      )";
+      $conn->query($create_table);
+    }
+
+    createTableIfNotExist($conn, "users");
+?>
+
 
 <!doctype html>
 <html lang="en">
