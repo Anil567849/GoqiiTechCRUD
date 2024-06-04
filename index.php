@@ -34,7 +34,6 @@
 
     if(isset($_GET['id'])){ // UPDATE DATA
       $id = $_GET['id'];
-      echo $id;
       
       // QUERY
       $sql = "SELECT * FROM users WHERE id = $id";
